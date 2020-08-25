@@ -9,6 +9,20 @@
 // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 // XO("zzoo") => false
 
+//other solution
+// const XO = str => {
+//   str = str.toLowerCase().split('');
+//   return str.filter(x => x === 'x').length === str.filter(x => x === 'o').length;
+// }
+
+//other solution
+// function XO(str) {
+//   var a = str.replace(/x/gi, ''),
+//       b = str.replace(/o/gi, '');
+//   return a.length === b.length;
+// }
+
+//my solution
 function XO(str) {
   //first convert the string to lowercase for sensitivity, then split into an array
   //run filter on the array to get the x's out & again to get the o's out
