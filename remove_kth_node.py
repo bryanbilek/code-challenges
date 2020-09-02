@@ -24,8 +24,9 @@
 #     self.value = x
 #     self.next = None
 #
-# understand: head is the first node in a ll. k is the number of nodes from reverse to remove a node
-# plan: traverse through the ll & find the node, then set the pointer from the node before to the node after
+
+#summary: keep a nodes counter & traverse through the nodes & subtract by k to get a complement value that represents the index of the node we want to remove. then use a pointer beginning at the head with a prev behind it so that when the pointer reaches the node needing removal, we can set the prev's next to the node needing removal's next thus skipping over that node needing removal. then return the list.
+
 def remove_kth_from_end(head, k):
     # edge case if k is 0, return the linked list as is
     if k == 0:
@@ -61,3 +62,7 @@ def remove_kth_from_end(head, k):
         prev.next = pointer.next
     # finally, return head which is the linked list
     return head
+
+#time complexity: O(n) - linear because in a worst case scenario we have to traverse through the list of nodes twice to find the node we want to remove and again to change the pointers. after simplifying it down it becomes O(n).
+
+#space complexity: O(1) - constant because we're just assigning some things and changing pointers

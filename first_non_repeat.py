@@ -22,23 +22,29 @@
 
 # The first non-repeating character in s of '_' if there are no characters that do not repeat.
 
+#summary: keep a count of the chars in a hash table & put them in order into a list so we can reference the first char in our list that has a count of 1, thus the first non-repeating char
 
 def first_not_repeating_character(s):
     # chars dict to store the chars as a key with their count as a value
-    # non_repeat to send the values in s that dont have a count already
     chars = {}
+    # non_repeat to send the values in s that dont have a count already
     non_repeat = []
     # for each char in s, if is in chars dict, add it's count by 1
-    # otherwise add it to chars dict with a count of 1 & append that char to our non_repeat list
+
     for char in s:
         if char in chars:
             chars[char] += 1
         else:
+    # otherwise add it to chars dict with a count of 1 & append that char to our non_repeat list
             chars[char] = 1
             non_repeat.append(char)
-    # for each character in non_repeat list, if the char value(count) is 1, return it
+    # for each character in non_repeat list, because appended in order we can look up the count & the first character with a count of 1 will be returned
     for char in non_repeat:
         if chars[char] == 1:
             return char
     # if none of the conditions were met then we return the last edge case
     return '_'
+
+#Time complexity: O(n) - linear because our main for loop would change based on the input size of s
+
+#Space complexity: O(n) - linear because we created a dict as well as an array that would change sizes based on the input size of s
