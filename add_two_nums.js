@@ -29,4 +29,3 @@ const addTwoNumbers = (arr1, arr2) => {
 
 console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); //expect 342 + 465 = 807 ===> [7,0,8]
 console.log(addTwoNumbers([1, 2, 3], [4, 5, 6])); //expect 321 + 654 = 975 ===> [5, 7, 9]
-//
